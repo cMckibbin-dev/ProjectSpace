@@ -19,7 +19,7 @@ internal sealed class ValidationService : IValidationService
         ValidationContext context = new(value, serviceProvider: _serviceProvider, null);
         List<DataAnnotationValidationResult> results = [];
 
-        bool isValid = Validator.TryValidateObject(value, context, results);
+        bool isValid = Validator.TryValidateObject(value, context, results, validateAllProperties: true);
 
         if (isValid)
         {
