@@ -1,0 +1,29 @@
+﻿@page
+@model ProjectSpace.Pages.ContactUsModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2>Contact Us</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="ContactUs.Name" class="form-label">Name</label>
+                <input asp-for="ContactUs.Name" class="form-control" placeholder="Your Name">
+                <span asp-validation-for="ContactUs.Name"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactUs.Email" class="form-label">Email</label>
+                <input type="email" asp-for="ContactUs.Email" class="form-control" placeholder="Your Email">
+                <span asp-validation-for="ContactUs.Email"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ContactUs.Message" class="form-label">Message</label>
+                <textarea asp-for="ContactUs.Message" class="form-control" rows="5" placeholder="Your Message"></textarea>
+                <span asp-validation-for="ContactUs.Message"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
