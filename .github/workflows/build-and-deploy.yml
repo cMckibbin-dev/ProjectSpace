@@ -14,9 +14,14 @@ env:
   PUBLISH_DIR: "./publish"
 
 jobs:
+  security-scan:
+    name: Security scan
+    uses: ./.github/workflows/SecurityScan.yml
+
   build-and-test:
     name: Build and Test
     runs-on: ubuntu-latest
+    needs: [security-scan]
 
     steps:
       - uses: actions/checkout@v4
