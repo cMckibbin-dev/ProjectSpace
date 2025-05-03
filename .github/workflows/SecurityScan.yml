@@ -1,11 +1,7 @@
 name: Security-Scan
 
 on:
-  push:
-    branches: [master]
-    paths:
-    - '**.cs'
-    - '**.csproj'
+  workflow_call:
   pull_request:
     branches: [master]
     paths:
