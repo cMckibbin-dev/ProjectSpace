@@ -17,6 +17,11 @@ jobs:
   security-scan:
     name: Security scan
     uses: ./.github/workflows/SecurityScan.yml
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    
 
   build-and-test:
     name: Build and Test
